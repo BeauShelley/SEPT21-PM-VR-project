@@ -67,7 +67,7 @@ public class Grabber : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var grabbable = other.GetComponent<GrabbableObject>();
-        if (grabbable != null && )
+        if (grabbable != null && hoveredObject != null)
         {
             hoveredObject.OnHoverEnd();
             hoveredObject = null;
