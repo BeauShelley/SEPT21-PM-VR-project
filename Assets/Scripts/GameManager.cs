@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public GameManager targetPrefab;
 
+    private BoxCollider box;
+
     public void SpawnTarget() 
     {
         var newTarget = Instantiate(targetPrefab, GenerateRandomPosition(), targetPrefab.transform.rotation);
@@ -13,11 +15,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void GenerateRandomPosition()
+    private Vector3 GenerateRandomPosition()
     {
-        var randomPosition = new Vector3(Random.Range(BoxCollider.bounds.min.x, BoxCollider.bounds.max.x), 
+        var randomPosition = new Vector3(Random.Range(box.bounds.min.x, box.bounds.max.x),
                                                        Random.Range(box.bounds.min.y, box.bounds.max.y),
-                                                       Random.Range(box.bounds.min.z, box.bounds.max.z));)
+                                                       Random.Range(box.bounds.min.z, box.bounds.max.z));
+        return randomPosition;
     }
 
     // Start is called before the first frame update

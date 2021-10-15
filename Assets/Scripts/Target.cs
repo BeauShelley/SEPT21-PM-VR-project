@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     public float spinUpAmount;
 
     private Vector3 StartPosition;
-    public float manager;
+    public GameManager manager;
 
 
 
@@ -37,6 +37,14 @@ public class Target : MonoBehaviour
 
         if(food != null)
         {
+            Destroy(food.gameObject);
+            
+
+            manager.SpawnTarget();
+
+            Destroy(gameObject);
+
+
 
         }
 
